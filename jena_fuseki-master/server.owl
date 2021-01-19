@@ -1,0 +1,788 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.got.org/esirem"
+     xml:base="http://www.got.org/esirem"
+     xmlns:got="http://www.got.org/esirem#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.got.org/esirem"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.got.org/esirem#Enfant_de -->
+
+    <owl:ObjectProperty rdf:about="http://www.got.org/esirem#Enfant_de">
+        <owl:inverseOf rdf:resource="http://www.got.org/esirem#Parent_de"/>
+        <rdfs:domain rdf:resource="http://www.got.org/esirem#Enfant"/>
+        <rdfs:range rdf:resource="http://www.got.org/esirem#Parent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.got.org/esirem#Epouse_de -->
+
+    <owl:ObjectProperty rdf:about="http://www.got.org/esirem#Epouse_de">
+        <owl:inverseOf rdf:resource="http://www.got.org/esirem#Mari_de"/>
+        <rdfs:domain rdf:resource="http://www.got.org/esirem#Epouse"/>
+        <rdfs:range rdf:resource="http://www.got.org/esirem#Mari"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.got.org/esirem#Fille_de -->
+
+    <owl:ObjectProperty rdf:about="http://www.got.org/esirem#Fille_de">
+        <rdfs:subPropertyOf rdf:resource="http://www.got.org/esirem#Enfant_de"/>
+        <rdfs:domain rdf:resource="http://www.got.org/esirem#Fille"/>
+        <rdfs:range rdf:resource="http://www.got.org/esirem#Parent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.got.org/esirem#Fils_de -->
+
+    <owl:ObjectProperty rdf:about="http://www.got.org/esirem#Fils_de">
+        <rdfs:subPropertyOf rdf:resource="http://www.got.org/esirem#Enfant_de"/>
+        <rdfs:domain rdf:resource="http://www.got.org/esirem#Fils"/>
+        <rdfs:range rdf:resource="http://www.got.org/esirem#Parent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.got.org/esirem#Grand_mère_de -->
+
+    <owl:ObjectProperty rdf:about="http://www.got.org/esirem#Grand_mère_de">
+        <rdfs:subPropertyOf rdf:resource="http://www.got.org/esirem#Grand_parent_de"/>
+        <rdfs:domain rdf:resource="http://www.got.org/esirem#Grand_mère"/>
+        <rdfs:range rdf:resource="http://www.got.org/esirem#Petit_enfant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.got.org/esirem#Grand_parent_de -->
+
+    <owl:ObjectProperty rdf:about="http://www.got.org/esirem#Grand_parent_de">
+        <owl:inverseOf rdf:resource="http://www.got.org/esirem#Petit_enfant_de"/>
+        <rdfs:domain rdf:resource="http://www.got.org/esirem#Grand_parent"/>
+        <rdfs:range rdf:resource="http://www.got.org/esirem#Petit_enfant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.got.org/esirem#Grand_père_de -->
+
+    <owl:ObjectProperty rdf:about="http://www.got.org/esirem#Grand_père_de">
+        <rdfs:subPropertyOf rdf:resource="http://www.got.org/esirem#Grand_parent_de"/>
+        <rdfs:domain rdf:resource="http://www.got.org/esirem#Grand_père"/>
+        <rdfs:range rdf:resource="http://www.got.org/esirem#Petit_enfant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.got.org/esirem#Mari_de -->
+
+    <owl:ObjectProperty rdf:about="http://www.got.org/esirem#Mari_de">
+        <rdfs:domain rdf:resource="http://www.got.org/esirem#Mari"/>
+        <rdfs:range rdf:resource="http://www.got.org/esirem#Epouse"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.got.org/esirem#Mère_de -->
+
+    <owl:ObjectProperty rdf:about="http://www.got.org/esirem#Mère_de">
+        <rdfs:subPropertyOf rdf:resource="http://www.got.org/esirem#Parent_de"/>
+        <rdfs:domain rdf:resource="http://www.got.org/esirem#Mère"/>
+        <rdfs:range rdf:resource="http://www.got.org/esirem#Enfant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.got.org/esirem#Parent_de -->
+
+    <owl:ObjectProperty rdf:about="http://www.got.org/esirem#Parent_de">
+        <rdfs:domain rdf:resource="http://www.got.org/esirem#Parent"/>
+        <rdfs:range rdf:resource="http://www.got.org/esirem#Enfant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.got.org/esirem#Petit_enfant_de -->
+
+    <owl:ObjectProperty rdf:about="http://www.got.org/esirem#Petit_enfant_de">
+        <rdfs:domain rdf:resource="http://www.got.org/esirem#Petit_enfant"/>
+        <rdfs:range rdf:resource="http://www.got.org/esirem#Grand_parent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.got.org/esirem#Petit_fils_de -->
+
+    <owl:ObjectProperty rdf:about="http://www.got.org/esirem#Petit_fils_de">
+        <rdfs:subPropertyOf rdf:resource="http://www.got.org/esirem#Petit_enfant_de"/>
+        <rdfs:domain rdf:resource="http://www.got.org/esirem#Petit_fils"/>
+        <rdfs:range rdf:resource="http://www.got.org/esirem#Grand_parent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.got.org/esirem#Petite_fille_de -->
+
+    <owl:ObjectProperty rdf:about="http://www.got.org/esirem#Petite_fille_de">
+        <rdfs:subPropertyOf rdf:resource="http://www.got.org/esirem#Petit_enfant_de"/>
+        <rdfs:domain rdf:resource="http://www.got.org/esirem#Petite_fille"/>
+        <rdfs:range rdf:resource="http://www.got.org/esirem#Grand_parent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.got.org/esirem#Père_de -->
+
+    <owl:ObjectProperty rdf:about="http://www.got.org/esirem#Père_de">
+        <rdfs:subPropertyOf rdf:resource="http://www.got.org/esirem#Parent_de"/>
+        <rdfs:domain rdf:resource="http://www.got.org/esirem#Père"/>
+        <rdfs:range rdf:resource="http://www.got.org/esirem#Enfant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.got.org/esirem#a_pour_audience_américain -->
+
+    <owl:ObjectProperty rdf:about="http://www.got.org/esirem#a_pour_audience_américain">
+        <owl:inverseOf rdf:resource="http://www.got.org/esirem#est_laudience_de"/>
+        <rdfs:domain rdf:resource="http://www.got.org/esirem#Episode"/>
+        <rdfs:range rdf:resource="http://www.got.org/esirem#Audience_américaine"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.got.org/esirem#a_pour_durée -->
+
+    <owl:ObjectProperty rdf:about="http://www.got.org/esirem#a_pour_durée">
+        <owl:inverseOf rdf:resource="http://www.got.org/esirem#est_la_durée_de"/>
+        <rdfs:domain rdf:resource="http://www.got.org/esirem#Episode"/>
+        <rdfs:range rdf:resource="http://www.got.org/esirem#Durée"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.got.org/esirem#a_pour_numéro_de_saison -->
+
+    <owl:ObjectProperty rdf:about="http://www.got.org/esirem#a_pour_numéro_de_saison">
+        <owl:inverseOf rdf:resource="http://www.got.org/esirem#est_numéro_de_saison_de"/>
+        <rdfs:domain rdf:resource="http://www.got.org/esirem#Episode"/>
+        <rdfs:range rdf:resource="http://www.got.org/esirem#Numéro_saison"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.got.org/esirem#a_pour_numéro_dépisode_de_saison -->
+
+    <owl:ObjectProperty rdf:about="http://www.got.org/esirem#a_pour_numéro_dépisode_de_saison">
+        <owl:inverseOf rdf:resource="http://www.got.org/esirem#est_numéro_dépisode_de_saison_de"/>
+        <rdfs:domain rdf:resource="http://www.got.org/esirem#Episode"/>
+        <rdfs:range rdf:resource="http://www.got.org/esirem#Numéro_episode"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.got.org/esirem#a_pour_numéro_dépisode_total -->
+
+    <owl:ObjectProperty rdf:about="http://www.got.org/esirem#a_pour_numéro_dépisode_total">
+        <owl:inverseOf rdf:resource="http://www.got.org/esirem#est_numéro_dépisode_total_de"/>
+        <rdfs:domain rdf:resource="http://www.got.org/esirem#Episode"/>
+        <rdfs:range rdf:resource="http://www.got.org/esirem#Numéro_global"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.got.org/esirem#a_pour_résumé -->
+
+    <owl:ObjectProperty rdf:about="http://www.got.org/esirem#a_pour_résumé">
+        <owl:inverseOf rdf:resource="http://www.got.org/esirem#est_le_résumé_de"/>
+        <rdfs:domain rdf:resource="http://www.got.org/esirem#Episode"/>
+        <rdfs:range rdf:resource="http://www.got.org/esirem#Résumé"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.got.org/esirem#a_un_directeur -->
+
+    <owl:ObjectProperty rdf:about="http://www.got.org/esirem#a_un_directeur">
+        <owl:inverseOf rdf:resource="http://www.got.org/esirem#est_le_directeur_de"/>
+        <rdfs:domain rdf:resource="http://www.got.org/esirem#Episode"/>
+        <rdfs:range rdf:resource="http://www.got.org/esirem#Directeur"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.got.org/esirem#a_un_scénariste -->
+
+    <owl:ObjectProperty rdf:about="http://www.got.org/esirem#a_un_scénariste">
+        <owl:inverseOf rdf:resource="http://www.got.org/esirem#est_le_scénariste_de"/>
+        <rdfs:domain rdf:resource="http://www.got.org/esirem#Episode"/>
+        <rdfs:range rdf:resource="http://www.got.org/esirem#Scénariste"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.got.org/esirem#a_un_titre -->
+
+    <owl:ObjectProperty rdf:about="http://www.got.org/esirem#a_un_titre">
+        <owl:inverseOf rdf:resource="http://www.got.org/esirem#est_le_titre_de"/>
+        <rdfs:domain rdf:resource="http://www.got.org/esirem#Episode"/>
+        <rdfs:range rdf:resource="http://www.got.org/esirem#Titre"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.got.org/esirem#a_une_date_de_première_diffusion -->
+
+    <owl:ObjectProperty rdf:about="http://www.got.org/esirem#a_une_date_de_première_diffusion">
+        <rdfs:domain rdf:resource="http://www.got.org/esirem#Episode"/>
+        <rdfs:range rdf:resource="http://www.got.org/esirem#Date_diffusion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.got.org/esirem#apparait_dans -->
+
+    <owl:ObjectProperty rdf:about="http://www.got.org/esirem#apparait_dans">
+        <owl:inverseOf rdf:resource="http://www.got.org/esirem#contient_le_personnage"/>
+        <rdfs:domain rdf:resource="http://www.got.org/esirem#Personnage"/>
+        <rdfs:range rdf:resource="http://www.got.org/esirem#Episode"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.got.org/esirem#appartient_à_la_saison -->
+
+    <owl:ObjectProperty rdf:about="http://www.got.org/esirem#appartient_à_la_saison">
+        <owl:inverseOf rdf:resource="http://www.got.org/esirem#contient_lépisode_"/>
+        <rdfs:domain rdf:resource="http://www.got.org/esirem#Episode"/>
+        <rdfs:range rdf:resource="http://www.got.org/esirem#Saison"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.got.org/esirem#contient_le_personnage -->
+
+    <owl:ObjectProperty rdf:about="http://www.got.org/esirem#contient_le_personnage">
+        <rdfs:domain rdf:resource="http://www.got.org/esirem#Episode"/>
+        <rdfs:range rdf:resource="http://www.got.org/esirem#Personnage"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.got.org/esirem#contient_lépisode_ -->
+
+    <owl:ObjectProperty rdf:about="http://www.got.org/esirem#contient_lépisode_">
+        <rdfs:domain rdf:resource="http://www.got.org/esirem#Saison"/>
+        <rdfs:range rdf:resource="http://www.got.org/esirem#Episode"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.got.org/esirem#est_la_durée_de -->
+
+    <owl:ObjectProperty rdf:about="http://www.got.org/esirem#est_la_durée_de">
+        <rdfs:domain rdf:resource="http://www.got.org/esirem#Durée"/>
+        <rdfs:range rdf:resource="http://www.got.org/esirem#Episode"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.got.org/esirem#est_laudience_de -->
+
+    <owl:ObjectProperty rdf:about="http://www.got.org/esirem#est_laudience_de">
+        <rdfs:domain rdf:resource="http://www.got.org/esirem#Audience_américaine"/>
+        <rdfs:range rdf:resource="http://www.got.org/esirem#Episode"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.got.org/esirem#est_le_directeur_de -->
+
+    <owl:ObjectProperty rdf:about="http://www.got.org/esirem#est_le_directeur_de">
+        <rdfs:domain rdf:resource="http://www.got.org/esirem#Directeur"/>
+        <rdfs:range rdf:resource="http://www.got.org/esirem#Episode"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.got.org/esirem#est_le_résumé_de -->
+
+    <owl:ObjectProperty rdf:about="http://www.got.org/esirem#est_le_résumé_de">
+        <rdfs:domain rdf:resource="http://www.got.org/esirem#Résumé"/>
+        <rdfs:range rdf:resource="http://www.got.org/esirem#Episode"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.got.org/esirem#est_le_scénariste_de -->
+
+    <owl:ObjectProperty rdf:about="http://www.got.org/esirem#est_le_scénariste_de">
+        <rdfs:domain rdf:resource="http://www.got.org/esirem#Scénariste"/>
+        <rdfs:range rdf:resource="http://www.got.org/esirem#Episode"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.got.org/esirem#est_le_titre_de -->
+
+    <owl:ObjectProperty rdf:about="http://www.got.org/esirem#est_le_titre_de">
+        <rdfs:domain rdf:resource="http://www.got.org/esirem#Titre"/>
+        <rdfs:range rdf:resource="http://www.got.org/esirem#Episode"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.got.org/esirem#est_numéro_de_saison_de -->
+
+    <owl:ObjectProperty rdf:about="http://www.got.org/esirem#est_numéro_de_saison_de">
+        <rdfs:domain rdf:resource="http://www.got.org/esirem#Numéro_saison"/>
+        <rdfs:range rdf:resource="http://www.got.org/esirem#Episode"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.got.org/esirem#est_numéro_dépisode_de_saison_de -->
+
+    <owl:ObjectProperty rdf:about="http://www.got.org/esirem#est_numéro_dépisode_de_saison_de">
+        <rdfs:domain rdf:resource="http://www.got.org/esirem#Numéro_episode"/>
+        <rdfs:range rdf:resource="http://www.got.org/esirem#Episode"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.got.org/esirem#est_numéro_dépisode_total_de -->
+
+    <owl:ObjectProperty rdf:about="http://www.got.org/esirem#est_numéro_dépisode_total_de">
+        <rdfs:domain rdf:resource="http://www.got.org/esirem#Numéro_global"/>
+        <rdfs:range rdf:resource="http://www.got.org/esirem#Episode"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.got.org/esirem#Audience_américaine -->
+
+    <owl:Class rdf:about="http://www.got.org/esirem#Audience_américaine"/>
+    
+
+
+    <!-- http://www.got.org/esirem#Beau_père -->
+
+    <owl:Class rdf:about="http://www.got.org/esirem#Beau_père">
+        <rdfs:subClassOf rdf:resource="http://www.got.org/esirem#Homme"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.got.org/esirem#Belle_mère -->
+
+    <owl:Class rdf:about="http://www.got.org/esirem#Belle_mère">
+        <rdfs:subClassOf rdf:resource="http://www.got.org/esirem#Femme"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.got.org/esirem#Cousin -->
+
+    <owl:Class rdf:about="http://www.got.org/esirem#Cousin">
+        <rdfs:subClassOf rdf:resource="http://www.got.org/esirem#Homme"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.got.org/esirem#Cousine -->
+
+    <owl:Class rdf:about="http://www.got.org/esirem#Cousine">
+        <rdfs:subClassOf rdf:resource="http://www.got.org/esirem#Femme"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.got.org/esirem#Date -->
+
+    <owl:Class rdf:about="http://www.got.org/esirem#Date"/>
+    
+
+
+    <!-- http://www.got.org/esirem#Date_diffusion -->
+
+    <owl:Class rdf:about="http://www.got.org/esirem#Date_diffusion">
+        <rdfs:subClassOf rdf:resource="http://www.got.org/esirem#Date"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.got.org/esirem#Directeur -->
+
+    <owl:Class rdf:about="http://www.got.org/esirem#Directeur"/>
+    
+
+
+    <!-- http://www.got.org/esirem#Durée -->
+
+    <owl:Class rdf:about="http://www.got.org/esirem#Durée"/>
+    
+
+
+    <!-- http://www.got.org/esirem#Enfant -->
+
+    <owl:Class rdf:about="http://www.got.org/esirem#Enfant">
+        <rdfs:subClassOf rdf:resource="http://www.got.org/esirem#Personnage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.got.org/esirem#Episode -->
+
+    <owl:Class rdf:about="http://www.got.org/esirem#Episode"/>
+    
+
+
+    <!-- http://www.got.org/esirem#Epouse -->
+
+    <owl:Class rdf:about="http://www.got.org/esirem#Epouse">
+        <rdfs:subClassOf rdf:resource="http://www.got.org/esirem#Femme"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.got.org/esirem#Femme -->
+
+    <owl:Class rdf:about="http://www.got.org/esirem#Femme">
+        <rdfs:subClassOf rdf:resource="http://www.got.org/esirem#Personnage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.got.org/esirem#Fille -->
+
+    <owl:Class rdf:about="http://www.got.org/esirem#Fille">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.got.org/esirem#Enfant"/>
+                    <rdf:Description rdf:about="http://www.got.org/esirem#Femme"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.got.org/esirem#Enfant"/>
+        <rdfs:subClassOf rdf:resource="http://www.got.org/esirem#Femme"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.got.org/esirem#Fils -->
+
+    <owl:Class rdf:about="http://www.got.org/esirem#Fils">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.got.org/esirem#Enfant"/>
+                    <rdf:Description rdf:about="http://www.got.org/esirem#Homme"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.got.org/esirem#Enfant"/>
+        <rdfs:subClassOf rdf:resource="http://www.got.org/esirem#Homme"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.got.org/esirem#Grand_mère -->
+
+    <owl:Class rdf:about="http://www.got.org/esirem#Grand_mère">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.got.org/esirem#Femme"/>
+                    <rdf:Description rdf:about="http://www.got.org/esirem#Grand_parent"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.got.org/esirem#Femme"/>
+        <rdfs:subClassOf rdf:resource="http://www.got.org/esirem#Grand_parent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.got.org/esirem#Grand_parent -->
+
+    <owl:Class rdf:about="http://www.got.org/esirem#Grand_parent">
+        <rdfs:subClassOf rdf:resource="http://www.got.org/esirem#Personnage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.got.org/esirem#Grand_père -->
+
+    <owl:Class rdf:about="http://www.got.org/esirem#Grand_père">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.got.org/esirem#Grand_parent"/>
+                    <rdf:Description rdf:about="http://www.got.org/esirem#Homme"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.got.org/esirem#Grand_parent"/>
+        <rdfs:subClassOf rdf:resource="http://www.got.org/esirem#Homme"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.got.org/esirem#Homme -->
+
+    <owl:Class rdf:about="http://www.got.org/esirem#Homme">
+        <rdfs:subClassOf rdf:resource="http://www.got.org/esirem#Personnage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.got.org/esirem#Mari -->
+
+    <owl:Class rdf:about="http://www.got.org/esirem#Mari">
+        <rdfs:subClassOf rdf:resource="http://www.got.org/esirem#Homme"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.got.org/esirem#Mère -->
+
+    <owl:Class rdf:about="http://www.got.org/esirem#Mère">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.got.org/esirem#Femme"/>
+                    <rdf:Description rdf:about="http://www.got.org/esirem#Parent"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.got.org/esirem#Femme"/>
+        <rdfs:subClassOf rdf:resource="http://www.got.org/esirem#Parent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.got.org/esirem#Numéro_episode -->
+
+    <owl:Class rdf:about="http://www.got.org/esirem#Numéro_episode"/>
+    
+
+
+    <!-- http://www.got.org/esirem#Numéro_global -->
+
+    <owl:Class rdf:about="http://www.got.org/esirem#Numéro_global">
+        <rdfs:subClassOf rdf:resource="http://www.got.org/esirem#Numéro_episode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.got.org/esirem#Numéro_saison -->
+
+    <owl:Class rdf:about="http://www.got.org/esirem#Numéro_saison">
+        <rdfs:subClassOf rdf:resource="http://www.got.org/esirem#Numéro_episode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.got.org/esirem#Parent -->
+
+    <owl:Class rdf:about="http://www.got.org/esirem#Parent">
+        <rdfs:subClassOf rdf:resource="http://www.got.org/esirem#Personnage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.got.org/esirem#Personnage -->
+
+    <owl:Class rdf:about="http://www.got.org/esirem#Personnage"/>
+    
+
+
+    <!-- http://www.got.org/esirem#Petit_enfant -->
+
+    <owl:Class rdf:about="http://www.got.org/esirem#Petit_enfant">
+        <rdfs:subClassOf rdf:resource="http://www.got.org/esirem#Personnage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.got.org/esirem#Petit_fils -->
+
+    <owl:Class rdf:about="http://www.got.org/esirem#Petit_fils">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.got.org/esirem#Homme"/>
+                    <rdf:Description rdf:about="http://www.got.org/esirem#Petit_enfant"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.got.org/esirem#Homme"/>
+        <rdfs:subClassOf rdf:resource="http://www.got.org/esirem#Petit_enfant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.got.org/esirem#Petite_fille -->
+
+    <owl:Class rdf:about="http://www.got.org/esirem#Petite_fille">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.got.org/esirem#Femme"/>
+                    <rdf:Description rdf:about="http://www.got.org/esirem#Petit_enfant"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.got.org/esirem#Femme"/>
+        <rdfs:subClassOf rdf:resource="http://www.got.org/esirem#Petit_enfant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.got.org/esirem#Père -->
+
+    <owl:Class rdf:about="http://www.got.org/esirem#Père">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.got.org/esirem#Homme"/>
+                    <rdf:Description rdf:about="http://www.got.org/esirem#Parent"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.got.org/esirem#Homme"/>
+        <rdfs:subClassOf rdf:resource="http://www.got.org/esirem#Parent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.got.org/esirem#Résumé -->
+
+    <owl:Class rdf:about="http://www.got.org/esirem#Résumé"/>
+    
+
+
+    <!-- http://www.got.org/esirem#Saison -->
+
+    <owl:Class rdf:about="http://www.got.org/esirem#Saison"/>
+    
+
+
+    <!-- http://www.got.org/esirem#Scénariste -->
+
+    <owl:Class rdf:about="http://www.got.org/esirem#Scénariste"/>
+    
+
+
+    <!-- http://www.got.org/esirem#Titre -->
+
+    <owl:Class rdf:about="http://www.got.org/esirem#Titre"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.got.org/esirem#Catelyn_Stark -->
+
+    <owl:NamedIndividual rdf:about="http://www.got.org/esirem#Catelyn_Stark">
+        <rdf:type rdf:resource="http://www.got.org/esirem#Femme"/>
+        <got:Epouse_de rdf:resource="http://www.got.org/esirem#Eddard_Stark"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.got.org/esirem#Cersei_Lannister -->
+
+    <owl:NamedIndividual rdf:about="http://www.got.org/esirem#Cersei_Lannister">
+        <rdf:type rdf:resource="http://www.got.org/esirem#Femme"/>
+        <got:Epouse_de rdf:resource="http://www.got.org/esirem#Robert_Baratheon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.got.org/esirem#Eddard_Stark -->
+
+    <owl:NamedIndividual rdf:about="http://www.got.org/esirem#Eddard_Stark">
+        <rdf:type rdf:resource="http://www.got.org/esirem#Homme"/>
+        <got:Père_de rdf:resource="http://www.got.org/esirem#Sansa_Stark"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.got.org/esirem#Joffrey_Lannister -->
+
+    <owl:NamedIndividual rdf:about="http://www.got.org/esirem#Joffrey_Lannister">
+        <rdf:type rdf:resource="http://www.got.org/esirem#Enfant"/>
+        <got:Fils_de rdf:resource="http://www.got.org/esirem#Cersei_Lannister"/>
+        <got:Fils_de rdf:resource="http://www.got.org/esirem#Robert_Baratheon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.got.org/esirem#Robert_Baratheon -->
+
+    <owl:NamedIndividual rdf:about="http://www.got.org/esirem#Robert_Baratheon">
+        <rdf:type rdf:resource="http://www.got.org/esirem#Homme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.got.org/esirem#Sansa_Stark -->
+
+    <owl:NamedIndividual rdf:about="http://www.got.org/esirem#Sansa_Stark">
+        <rdf:type rdf:resource="http://www.got.org/esirem#Fille"/>
+        <got:Fille_de rdf:resource="http://www.got.org/esirem#Catelyn_Stark"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.got.org/esirem#Winter_Is_Coming -->
+
+    <owl:NamedIndividual rdf:about="http://www.got.org/esirem#Winter_Is_Coming">
+        <rdf:type rdf:resource="http://www.got.org/esirem#Titre"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

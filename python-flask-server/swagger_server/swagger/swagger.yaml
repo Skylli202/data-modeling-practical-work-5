@@ -1,0 +1,159 @@
+---
+swagger: "2.0"
+info:
+  description: "Swagger API interface for jena server."
+  version: "0.1.0"
+  title: "Jena-Fuseki API"
+basePath: "/api"
+tags:
+- name: "ServerManipulation"
+  description: "Create, stop or delete jena server"
+- name: "Queries"
+  description: "Query the server"
+schemes:
+- "http"
+- "https"
+paths:
+  /update:
+    post:
+      tags:
+      - "ServerManipulation"
+      summary: "Send a sparql to update the ontology"
+      operationId: "update"
+      consumes:
+      - "text/plain; charset=utf-8"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "query"
+        in: "query"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Successful operation"
+          schema:
+            type: "object"
+      x-swagger-router-controller: "swagger_server.controllers.server_manipulation_controller"
+  /getDataset:
+    get:
+      tags:
+      - "ServerManipulation"
+      summary: "get the owl file corresponding to the dataset"
+      operationId: "get_dataset"
+      produces:
+      - "text/plain; charset=utf-8"
+      parameters: []
+      responses:
+        "200":
+          description: "Successful operation"
+          schema:
+            type: "object"
+      x-swagger-router-controller: "swagger_server.controllers.server_manipulation_controller"
+  /query:
+    get:
+      tags:
+      - "ServerManipulation"
+      summary: "Send a sparql query to the server"
+      operationId: "send_query"
+      consumes:
+      - "text/plain; charset=utf-8"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "query"
+        in: "query"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Successful operation"
+          schema:
+            type: "object"
+      x-swagger-router-controller: "swagger_server.controllers.server_manipulation_controller"
+  /create_from_file:
+    post:
+      tags:
+      - "ServerManipulation"
+      summary: "Create a server with an owl file"
+      operationId: "create_from_file"
+      consumes:
+      - "multipart/form-data"
+      produces:
+      - "text/plain; charset=utf-8"
+      parameters:
+      - name: "ontology"
+        in: "formData"
+        required: true
+        type: "file"
+      responses:
+        "200":
+          description: "Successful operation"
+          schema:
+            type: "object"
+      x-swagger-router-controller: "swagger_server.controllers.server_manipulation_controller"
+  /create:
+    post:
+      tags:
+      - "ServerManipulation"
+      summary: "Create a server from last ontology file"
+      operationId: "create"
+      consumes:
+      - "multipart/form-data"
+      produces:
+      - "text/plain; charset=utf-8"
+      parameters: []
+      responses:
+        "200":
+          description: "Successful operation"
+          schema:
+            type: "object"
+      x-swagger-router-controller: "swagger_server.controllers.server_manipulation_controller"
+  /stop:
+    post:
+      tags:
+      - "ServerManipulation"
+      summary: "Stop the server"
+      operationId: "stop"
+      produces:
+      - "text/plain; charset=utf-8"
+      parameters: []
+      responses:
+        "200":
+          description: "Successful operation"
+          schema:
+            type: "object"
+        "400":
+          description: "Invalid inputs"
+          schema:
+            type: "object"
+      x-swagger-router-controller: "swagger_server.controllers.server_manipulation_controller"
+  /delete:
+    post:
+      tags:
+      - "ServerManipulation"
+      summary: "Delete all data"
+      operationId: "delete"
+      produces:
+      - "text/plain; charset=utf-8"
+      parameters: []
+      responses:
+        "200":
+          description: "Successful operation"
+          schema:
+            type: "object"
+        "400":
+          description: "Invalid inputs"
+          schema:
+            type: "object"
+      x-swagger-router-controller: "swagger_server.controllers.server_manipulation_controller"
+definitions: {}
+responses:
+  InvalidInputs:
+    description: "Invalid inputs"
+    schema:
+      type: "object"
+  Successful:
+    description: "Successful operation"
+    schema:
+      type: "object"

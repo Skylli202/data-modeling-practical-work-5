@@ -1,0 +1,18 @@
+# SPARQL Request pour avoir les instances de got:Personnage
+prefix got: <http://www.got.org/esirem#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+select ?personnage where { ?personnage a got:Personnage . }
+
+#
+prefix got: <http://www.got.org/esirem#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+insert data {got:Episode_50 got:a_un_titre got:Mother's_Mercy};
+select ?Episode where {?episode a got:Episode . }
+
+prefix got: <http://www.got.org/esirem#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+select distinct ?episode ?personnage
+where {
+    ?episode got:contient_le_personnage ?personnage
+}
+order by ?episode
